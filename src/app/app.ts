@@ -7,7 +7,8 @@ import { Users } from './users';
   imports: [Layout],
   templateUrl: './app.html',
   changeDetection: ChangeDetectionStrategy.Eager,
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
+  providers: [Users]
 })
 export class App implements OnInit {
 

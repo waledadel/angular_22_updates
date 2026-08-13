@@ -2,7 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, Service } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
-@Service()
+@Service({
+    autoProvided: false
+})
 
 // @Injectable({
 //     providedIn: 'root'
