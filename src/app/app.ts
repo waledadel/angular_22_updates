@@ -1,4 +1,4 @@
-import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import { Layout } from './layout/layout';
 @Component({
@@ -9,5 +9,4 @@ import { Layout } from './layout/layout';
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('angular_22_updates');
 }
