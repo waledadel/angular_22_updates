@@ -1,0 +1,78 @@
+:host {
+  display: block;
+}
+
+.shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.topbar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar-inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.25;
+}
+
+.author-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.lesson {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff;
+}
+
+.lesson-inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.lesson-title {
+  margin: 0;
+  color: #fff;
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.content {
+  flex: 1;
+  width: 100%;
+}
+
+.content-inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+@media (max-width: 560px) {
+  .lesson-title {
+    font-size: 1.45rem;
+  }
+}

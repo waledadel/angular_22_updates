@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --content-width: 1000px;
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --border: #e7e8ee;
+  --text: #1c2024;
+  --text-muted: #6b7280;
+
+  --accent: #7c3aed;
+  --accent-2: #db2777;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
