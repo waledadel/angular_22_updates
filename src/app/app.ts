@@ -8,7 +8,7 @@ import { Users } from './users';
   templateUrl: './app.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.scss',
-  providers: [Users]
+  // providers: [Users]
 })
 export class App implements OnInit {
 
@@ -19,6 +19,6 @@ export class App implements OnInit {
   // }
 
   ngOnInit(): void {
-    this.usersService.getName().subscribe(res => console.log(res));
+    this.usersService.settName('Waleed Adel');
   }
 }

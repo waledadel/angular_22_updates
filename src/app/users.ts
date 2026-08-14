@@ -1,9 +1,9 @@
-import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, Service } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { inject, Service } from '@angular/core';
+
+import { IS_PRODUCTION } from './injection-tokens';
 
 @Service({
-    autoProvided: false
+    factory: () => inject(IS_PRODUCTION) ? new Production() : new Development()
 })
 
 // @Injectable({
@@ -12,14 +12,19 @@ import { Observable, of } from 'rxjs';
 
 export class Users {
 
-    private readonly httpClient = inject(HttpClient);
-
-    // constructor(private httpClient: HttpClient) {
-
-    // }
-  
-    getName(): Observable<string> {
-        return of('Angular 22 Updates');
+    settName(name: string): void {
+        console.log('Users service', name);
     }
+}
 
+export class Development extends Users {
+    override settName(name: string): void {
+        console.log('Dev Mode', name);
+    }
+}
+
+export class Production extends Users {
+    override settName(name: string): void {
+        console.log('Prod Mode', name);
+    }
 }
