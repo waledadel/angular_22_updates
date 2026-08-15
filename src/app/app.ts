@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, OnInit, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, inject, signal } from '@angular/core';
 
 import { Layout } from './layout/layout';
 import { Users } from './users';
@@ -12,6 +12,8 @@ import { Users } from './users';
 })
 export class App implements OnInit {
 
+  count = signal(0);
+
   private usersService = inject(Users);
 
   // constructor(private usersService: Users) {
@@ -21,4 +23,8 @@ export class App implements OnInit {
   ngOnInit(): void {
     this.usersService.settName('Waleed Adel');
   }
+
+  // increase(): void {
+  //   this.count.update(c => c + 1);
+  // }
 }

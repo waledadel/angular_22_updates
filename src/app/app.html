@@ -1,1 +1,6 @@
-<app-layout />
+<app-layout>
+    {{count()}}
+    <!-- <button (click)="increase()">Increase1</button> -->
+    <button (click)="count.update(c => c + 1)">Increase2</button>
+</app-layout>
+
