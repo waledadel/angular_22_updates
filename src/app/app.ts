@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, OnInit, inject, signal, injectAsync } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, inject, signal, injectAsync, onIdle } from '@angular/core';
 
 import { Layout } from './layout/layout';
 import { Users } from './users';
@@ -16,7 +16,11 @@ export class App implements OnInit {
   count = signal(0);
 
   private usersService = inject(Users);
-  private readonly pdf = injectAsync(() => import('./pdf').then(s => s.PDF));
+  // pdf = inject(PDF);
+  private readonly pdf = injectAsync(() => import('./pdf').then(s => s.PDF), {
+    // prefetch: onIdle
+    prefetch: () => onIdle({timeout: 100})
+  });
 
   // constructor(private usersService: Users) {
 
